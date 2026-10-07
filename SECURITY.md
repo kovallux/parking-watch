@@ -4,6 +4,8 @@
 
 Camera credentials and Telegram bot tokens belong in macOS Keychain or the process environment. `config.local.json` can contain private network addresses, bot usernames and chat IDs even when it contains no password. Camera photos, pairing records, installation notes and reference files are local data and must not be committed.
 
+The owner-approved screenshot at `docs/images/telegram-check.png` is a deliberate public documentation illustration. This exception does not allow other camera images or diagnostic bundles.
+
 The application uses generic camera/network error messages to avoid exposing credentials in failed request URLs. Detection is local; Telegram notifications send the actual photo to Telegram when enabled.
 
 ## Before publishing

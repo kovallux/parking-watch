@@ -25,6 +25,9 @@ def git(*args):
 
 def private_path(name):
     path = PurePosixPath(name)
+    # The owner explicitly approved this screenshot for the public README.
+    if path.as_posix() == "docs/images/telegram-check.png":
+        return False
     return (path.parts[0] in {"data", "research", "web", ".runtime", ".tools", ".ultralytics"}
             or any(part.startswith(".venv") or part == "__pycache__" for part in path.parts)
             or path.name == "config.local.json" or path.name.endswith(".local.json")

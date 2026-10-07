@@ -4,6 +4,12 @@ Local monitoring of parking spaces from a fixed RTSP camera, with optional Teleg
 
 Parking Watch analyses video on your computer. A missed vehicle detection is **not** treated as an empty space: vacancy also requires a match against a visually confirmed empty reference of the same camera view.
 
+## Telegram example
+
+The `/check` command returns a camera photo, its capture time and the status of both parking spaces.
+
+![Telegram /check response showing both parking spaces occupied](docs/images/telegram-check.png)
+
 ## Features
 
 - Separate regions, names, references and states for each parking space.
@@ -93,6 +99,7 @@ python3 scripts/check_public_files.py
 | `parking_watch/` | Detection, references, state confirmation, camera access and Telegram |
 | `tests/` | Synthetic and mocked regression tests; no private camera frames |
 | `scripts/` | Environment setup, launch helpers and publication checks |
+| `docs/images/` | Approved illustrations for the documentation |
 | `config.example.json` | Shareable configuration template |
 | `START-HERE.md` | macOS setup and operation |
 

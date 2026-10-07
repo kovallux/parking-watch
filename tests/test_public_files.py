@@ -23,6 +23,11 @@ class PublicFilesTests(TestCase):
         self.assertEqual(findings, [("README.md", 1, "telegram-token")])
         self.assertNotIn(secret, repr(findings))
 
+    def test_only_the_approved_documentation_image_is_allowed(self):
+        self.assertFalse(checker.private_path("docs/images/telegram-check.png"))
+        self.assertTrue(checker.private_path("docs/images/another-camera.png"))
+        self.assertTrue(checker.private_path("data/telegram-check.png"))
+
     def test_credential_url_exception_applies_only_to_exact_test_fixture(self):
         sample = "rtsp://" + "admin:test%3A%40%2F@192.0.2.10:554/ch1/main"
         self.assertFalse(checker.scan_text("tests/test_camera_access.py", sample))
