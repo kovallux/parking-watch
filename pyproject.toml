@@ -1,0 +1,16 @@
+[project]
+name = "parking-watch"
+version = "0.1.0"
+description = "Local parking-space monitor with conservative occupancy decisions"
+requires-python = ">=3.11,<3.14"
+dependencies = ["ultralytics>=8.3,<9", "imageio-ffmpeg==0.6.0"]
+
+[project.scripts]
+parking-watch = "parking_watch.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["parking_watch"]

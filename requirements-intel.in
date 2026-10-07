@@ -1,0 +1,6 @@
+ultralytics==8.4.171
+torch==2.2.2
+torchvision==0.17.2
+numpy==1.26.4
+opencv-python==4.9.0.80
+imageio-ffmpeg==0.6.0

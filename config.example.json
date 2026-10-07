@@ -1,0 +1,96 @@
+{
+  "name": "Parking Watch",
+  "calibrated": false,
+  "model": "yolo11n-seg.pt",
+  "occupancy_fallback_model": "yolo11s-seg.pt",
+  "contrast_occupancy_fallback": true,
+  "device": "cpu",
+  "imgsz": 960,
+  "confidence": 0.35,
+  "camera": {
+    "ip": "192.0.2.10",
+    "keychain_service": "com.kovallux.parking-watch.camera",
+    "keychain_account": "camera-password"
+  },
+  "telegram": {
+    "keychain_service": "com.kovallux.parking-watch.telegram",
+    "keychain_account": "bot-token",
+    "username": "",
+    "chat_id": ""
+  },
+  "spaces": [
+    {
+      "id": "left",
+      "name": "Left space",
+      "polygon": [
+        [
+          0.05,
+          0.3
+        ],
+        [
+          0.45,
+          0.3
+        ],
+        [
+          0.45,
+          0.7
+        ],
+        [
+          0.05,
+          0.7
+        ]
+      ],
+      "empty_references": []
+    },
+    {
+      "id": "right",
+      "name": "Right space",
+      "polygon": [
+        [
+          0.55,
+          0.3
+        ],
+        [
+          0.95,
+          0.3
+        ],
+        [
+          0.95,
+          0.7
+        ],
+        [
+          0.55,
+          0.7
+        ]
+      ],
+      "empty_references": []
+    }
+  ],
+  "occupied_coverage": 0.2,
+  "free_coverage": 0.03,
+  "empty_difference_max": 0.08,
+  "empty_structure_min": 0.4,
+  "free_seconds": 10,
+  "occupied_seconds": 3,
+  "unavailable_seconds": 15,
+  "analysis_interval_seconds": 2,
+  "stream_width": 1280,
+  "stream_height": 720,
+  "empty_candidate_capture": {
+    "enabled": false,
+    "space_ids": []
+  },
+  "vehicle_identity": {
+    "enabled": false
+  },
+  "data_retention": {
+    "enabled": true,
+    "interval_seconds": 3600,
+    "telegram_days": 7,
+    "telegram_max_mib": 10,
+    "reviewed_candidate_hours": 1,
+    "candidate_max_mib": 32,
+    "capture_days": 7,
+    "capture_max_mib": 32
+  }
+}
